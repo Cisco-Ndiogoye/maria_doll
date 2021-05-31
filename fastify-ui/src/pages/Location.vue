@@ -35,12 +35,21 @@ export default {
   },
 
   created() {
-    this.location = this.$route.fullPath.replace('/products/location/','')
-    console.log(this.id)
-    api.get('http://localhost:3000/products/location/' + this.location).then(function(response) {
-      this.products = response.data.data;
-      console.log(this.products);
-    }.bind(this));
+    this.getData();
+    this.$root.$on('refresh', () => {
+      this.getData();
+      //console.log('Refresh button pressed.')
+    });
+
   },
+
+  methods: {
+    async getData() {
+      this.location = this.$route.fullPath.replace('/products/location/','');
+      api.get('http://localhost:3000/products/location/' + this.location).then(function(response) {
+        this.products = response.data.data;
+      }.bind(this));
+    }
+  }
 }
 </script>
