@@ -3,7 +3,6 @@
     <q-item
     clickable
     tag="a"
-    target="_blank"
     :href="'#/products/' + id"
     class="item"
     >
@@ -43,7 +42,6 @@ export default {
     console.log(this.id)
     api.get('http://localhost:3000/products/' + this.id).then(function(response) {
       this.product = response.data;
-      console.log(this.product);
     }.bind(this));
   },
 }
