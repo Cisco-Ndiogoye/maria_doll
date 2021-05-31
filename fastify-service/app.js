@@ -10,6 +10,5 @@ fastify.register(require('fastify-cors'), {
     methods: ["POST"],
     allowedHeaders: ['Content-Type']
   });
-fastify.register(require('fastify-formbody'))
 
 module.exports = fastify

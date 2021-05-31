@@ -2,7 +2,6 @@
   <q-item
     clickable
     tag="a"
-    target="_blank"
     :href="'#/products/' + id"
     >
       <q-item-section>

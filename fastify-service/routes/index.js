@@ -1,7 +1,3 @@
-const fs = require('fs')
-const pump = require('pump')
-
-
 
 let products = require('../controller/product');
 

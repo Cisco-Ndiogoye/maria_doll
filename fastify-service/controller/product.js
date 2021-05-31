@@ -1,5 +1,3 @@
-const fs = require('fs')
-const pump = require('pump')
 
 
 const productsModel = require('../models/productsModel.js')
