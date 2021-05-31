@@ -9,12 +9,12 @@ npm install
 
 ## Create .env file with properties
 ```bash
-SERVER_PORT=3000
-DB_HOST=localhost
-DB_USER=root
-DB_PASSWORD=password
-DB_NAME=maria_doll_products
-DB_PORT=3306
+SERVER_PORT=
+DB_HOST=
+DB_USER=
+DB_PASSWORD=
+DB_NAME=
+DB_PORT=
 ```
 
 
