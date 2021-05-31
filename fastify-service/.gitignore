@@ -3,7 +3,7 @@
 node_modules
 
 # Environnement configuration
-.env
+*.env
 /dist
 
 
