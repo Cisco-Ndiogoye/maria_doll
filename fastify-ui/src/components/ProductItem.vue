@@ -18,13 +18,12 @@
     </q-item>
 </template>
 <script>
-import ProductDetailVue from 'src/pages/ProductDetail.vue'
 export default {
   name: 'ProductItem',
   props: {
     id: {
       type: Number,
-      required: true
+      required: true,
     },
 
     location_name: {
