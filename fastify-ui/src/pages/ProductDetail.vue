@@ -38,7 +38,7 @@ export default {
     }
   },
 
-  beforeMount() {
+  created() {
     this.id = this.$route.fullPath.replace('/products/','')
     console.log(this.id)
     api.get('http://localhost:3000/products/' + this.id).then(function(response) {

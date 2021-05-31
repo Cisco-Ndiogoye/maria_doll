@@ -19,6 +19,7 @@
 import { api } from 'boot/axios'
 import ProductItem from 'src/components/ProductItem.vue'
 
+
 export default {
   components: { ProductItem },
   data() {
@@ -29,17 +30,21 @@ export default {
 
   created() {
     this.getData();
+    this.$root.$on('refresh', () => {
+      this.getData();
+      //console.log('Refresh button pressed.')
+    })
   },
+
+
 
   methods: {
     async getData() {
       await api.get('http://localhost:3000/products').then(function(response) {
         this.products = response.data.data[0];
-        console.log(this.products)
+        //console.log(this.products)
       }.bind(this));
-    }
+    },
   }
-
 }
-
 </script>

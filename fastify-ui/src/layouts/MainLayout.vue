@@ -12,7 +12,12 @@
         />
 
         <q-toolbar-title>
-          Quasar App
+          <q-input dark dense standout v-model="text" class="q-ml-md">
+          <template v-slot:append>
+            <q-icon name="search" class="cursor-pointer" @click="search" />
+            <q-icon name="clear" class="cursor-pointer" @click="reset" />
+          </template>
+        </q-input>
         </q-toolbar-title>
 
         <div>
@@ -62,13 +67,13 @@ const linksData = [
     title: 'Products',
     caption: 'List products',
     icon: 'list',
-    link: 'http://localhost:8080/#/products'
+    to: 'http://localhost:8080/#/products'
   },
   {
     title: 'Import',
     caption: 'Import products from file',
     icon: 'download',
-    link: 'http://localhost:8080/#/products/file/add'
+    to: 'http://localhost:8080/#/products/file/add'
   },
 ];
 
@@ -79,14 +84,23 @@ export default {
     return {
       leftDrawerOpen: false,
       essentialLinks: linksData,
+      text: null,
     }
   },
 
   methods: {
     refresh() {
-      //this.bus.$emit('refresh');
-      console.log('Refresh function');
+      this.$root.$emit('refresh')
     },
+
+    reset() {
+      this.text = '';
+    },
+
+    search() {
+      this.$router.push({path: '/products/location/' + this.text});
+      this.reset();
+    }
   }
 }
 </script>
