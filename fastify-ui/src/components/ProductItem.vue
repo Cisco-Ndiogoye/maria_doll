@@ -50,8 +50,6 @@ export default {
       default: '#'
     }
   },
-  methods() {
-    //console.log(ProductDetailVue);
-  }
+  methods() {  }
 }
 </script>

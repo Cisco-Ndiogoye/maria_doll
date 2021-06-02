@@ -46,7 +46,6 @@
 
     eventListener(event){
         selectedFile = event.target.files[0];
-        console.log(this.selected_file);
     },
 
 
