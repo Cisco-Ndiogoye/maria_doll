@@ -49,7 +49,6 @@ export default {
       type: String,
       default: '#'
     }
-  },
-  methods() {  }
+  }
 }
 </script>
